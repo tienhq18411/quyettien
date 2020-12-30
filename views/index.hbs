@@ -7,22 +7,35 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        div{
+
+            padding: 30px 30px;
+            float: left;
+            font-weight: bold;
+            font-size: larger;
+        }
+        h1{
+            font-size: x-large;
+            font-weight: bolder;
+        }
+    </style>
     <title>Home page</title>
 </head>
     <center>
         <h1>TOYS STORE</h1>
     </center>
-
-    <td>
+    <div>
+        <a href="">Home</a>
         <a href="/insert">Add a new Product</a>
-    </td>
-
-
+        <a href="">Contact</a>
+    </div>
+        
 <table width='100%'>
-    <tr>
-            <td>Name</td>
-            <td>Price</td>
-            <td>Delete</td>
+        <tr>
+            <td><b>Name</b></td>
+            <td><b>Price</b></td>
+            <td><b>Delete</b></td>
         </tr>
         {{#each model}}
         <tr>            

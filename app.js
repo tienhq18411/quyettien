@@ -24,7 +24,6 @@ app.get('/insert',(req,res)=>{
 })
 
 
-
 app.post('/doInsert',async (req,res)=>{
     let nameInput = req.body.txtName;
     let priceInput = req.body.txtPrice;
