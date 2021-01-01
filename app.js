@@ -1,13 +1,13 @@
 var express = require('express')
 var hbs = require('hbs')
-
+//liên kết đường dẫn
 var app= express()
 app.set('view engine','hbs');
 hbs.registerPartials(__dirname +'/views/partial')
-
+//kết nối mongodb 
 var MongoClient = require('mongodb').MongoClient;
 var url = 'mongodb+srv://tienhq456:123456789a@cluster0.xkq2s.mongodb.net/test';  
-
+//trang chủ
 app.get('/', async (req,res)=>{
     let client= await MongoClient.connect(url);
     let dbo = client.db("web");
@@ -17,8 +17,6 @@ app.get('/', async (req,res)=>{
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 
-
-
 app.get('/insert',(req,res)=>{
     res.render('insert')
 })
@@ -27,9 +25,11 @@ app.get('/insert',(req,res)=>{
 app.post('/doInsert',async (req,res)=>{
     let nameInput = req.body.txtName;
     let priceInput = req.body.txtPrice;
+    let colorInput = req.body.txtColor;
     let newProduct =  {
         name : nameInput,
-        price: priceInput
+        price: priceInput,
+        color: colorInput
     }
         let client= await MongoClient.connect(url);
         let dbo = client.db("web");

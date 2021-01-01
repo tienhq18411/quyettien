@@ -7,19 +7,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <style>
-        div{
-
-            padding: 30px 30px;
-            float: left;
-            font-weight: bold;
-            font-size: larger;
-        }
-        h1{
-            font-size: x-large;
-            font-weight: bolder;
-        }
-    </style>
     <title>Home page</title>
 </head>
     <center>
@@ -34,12 +21,14 @@
 <table width='100%'>
         <tr>
             <td><b>Name</b></td>
+            <td><b>Color</b></td>
             <td><b>Price</b></td>
             <td><b>Delete</b></td>
         </tr>
         {{#each model}}
         <tr>            
             <td>{{name}}</td>
+            <td>{{color}}</td>
             <td>{{price}}</td>
             <td><a href="/delete?id={{_id}}" 
                 onclick="return confirmDelete('{{newProduct}}')">Delete</a></td>
